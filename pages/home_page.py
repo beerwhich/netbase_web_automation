@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
-from common_util.web.base import Page
+from common_util.web.page import Page
 from locators.home_page_locator import HomePageLocator
 
 

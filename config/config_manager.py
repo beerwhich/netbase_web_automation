@@ -21,5 +21,5 @@ LOG_MSG_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
 LOG_FILE_DIRECTORY = 'log'
 LOG_PROJECT_NAME = "Instagram_login"
 LOG_TYPE = "WEB"
-LOGFILE_NAME = "cds.web.log"
+LOGFILE_NAME = "automation.web.log"
 LOG_IS_STDOUT = True

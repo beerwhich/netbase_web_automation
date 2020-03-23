@@ -1,6 +1,6 @@
 import time
 
-from common_util.web.base import Page
+from common_util.web.page import Page
 from locators.login_locator import LoginPageLocator
 
 

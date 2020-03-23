@@ -2,9 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from config import config_manager as conf
-from common_util.web.base import Page
+from common_util.web.page import Page
 from pages.login_page import LoginPage
 from pages.home_page import HomePage
+from common_util.logger_manager import LoggerManager
 
 
 class TestLoginPage(object):
@@ -32,7 +33,7 @@ class TestLoginPage(object):
 
     def teardown_method(self, method):
         print("teardown_method()")
-        self.page.screenshots(method.__name__)
+        self.page.screenshot(method.__name__)
         self.driver.quit()
 
     def test_instagram_login_with_username(self):
@@ -51,6 +52,6 @@ class TestLoginPage(object):
         self.login_page.login_with_account_and_password(account='netbase123wrong', password='netbase123wrong')
         assert self.login_page.get_error_message_from_error_message_paragraph() == "The username you entered doesn't belong to an account. Please check your username and try again."
 
-    def test_instagram_login_with_phone_number(self):
-        self.login_page.login_with_account_and_password(account=conf.ACCOUNT_PHONE_NUMBER, password=conf.ACCOUNT_PASSWORD)
+    def test_instagram_login_with_email(self):
+        self.login_page.login_with_account_and_password(account=conf.ACCOUNT_EMAIL, password=conf.ACCOUNT_PASSWORD)
         assert self.home_page.check_if_sign_in() is True, 'Failure: fail to sign in.'
