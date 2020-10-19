@@ -14,7 +14,7 @@ class TestLoginPage(object):
     def setup_class(cls):
         print("setup_class()")
         cls.options = Options()
-        cls.options.add_argument("--headless")
+        # cls.options.add_argument("--headless")
         cls.options.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_US'})
 
     @classmethod
